@@ -21,3 +21,19 @@ model Wine_master {
   price       String
   categoryid  String
 }
+
+model Food_master {
+  id          String @id @default(uuid())
+  name        String
+  description String
+  price       String
+  categoryid  String
+}
+
+model Sisha_master {
+  id          String @id @default(uuid())
+  name        String
+  description String
+  price       String
+  categoryid  String
+}

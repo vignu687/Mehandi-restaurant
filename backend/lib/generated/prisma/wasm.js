@@ -128,6 +128,22 @@ exports.Prisma.Wine_masterScalarFieldEnum = {
   categoryid: 'categoryid'
 };
 
+exports.Prisma.Food_masterScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  price: 'price',
+  categoryid: 'categoryid'
+};
+
+exports.Prisma.Sisha_masterScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  price: 'price',
+  categoryid: 'categoryid'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -140,7 +156,9 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  Wine_master: 'Wine_master'
+  Wine_master: 'Wine_master',
+  Food_master: 'Food_master',
+  Sisha_master: 'Sisha_master'
 };
 
 /**

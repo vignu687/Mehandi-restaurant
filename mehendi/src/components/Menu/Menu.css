@@ -1,0 +1,66 @@
+.card {
+  width: 300px;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin: 15px 0 10px;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.comments-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.heart {
+  font-size: 1.2rem;
+  margin-right: 6px;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
