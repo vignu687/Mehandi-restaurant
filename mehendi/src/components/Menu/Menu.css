@@ -64,3 +64,47 @@
   margin-top: 40px;
   flex-wrap: wrap;
 }
+.vertical-card {
+  width: 220px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  padding: 16px;
+  margin: 20px auto;
+  transition: transform 0.2s;
+}
+
+.vertical-card:hover {
+  transform: scale(1.03);
+}
+
+.vertical-card-body {
+  text-align: center;
+}
+
+.vertical-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.vertical-card-description {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.vertical-card-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #10b981;
+}
+.food-menu-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+}

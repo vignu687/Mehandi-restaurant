@@ -1,8 +1,8 @@
 import React from "react";
 import "./Menu.css";
-export const MainMenu = ({ title, image }) => {
+export const MainMenu = ({ title, image, onClick }) => {
   return (
-    <div className="card">
+    <div className="card" onClick={onClick} style={{ cursor: "pointer" }}>
       <img src={image} alt={title} className="card-img" />
       <h3 className="card-title">{title}</h3>
       {/* <div className="card-actions">
