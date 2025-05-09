@@ -1,12 +1,15 @@
 /* Wrapper Styles */
 .wrapper {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  overflow-x: hidden; /* allow vertical scroll */
+  overflow-y: auto;
   background-color: #000; /* Fallback background color in case video fails */
 }
 
@@ -34,7 +37,12 @@
 /* Individual Card Styles */
 .card {
   width: 300px;
-  background: rgba(255, 255, 255, 0.9); /* Slightly transparent to show the background */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Slightly transparent to show the background */
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -134,4 +142,57 @@
   justify-content: center;
   gap: 20px;
   padding: 40px 20px;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: 260px;
+  }
+
+  .vertical-card {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .vertical-card {
+    width: 90%;
+    max-width: 260px;
+  }
+
+  .card-container,
+  .food-menu-wrapper {
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 95%;
+  }
+
+  .vertical-card {
+    width: 95%;
+  }
+
+  .card-title,
+  .vertical-card-title {
+    font-size: 1rem;
+  }
+
+  .card-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .comments-btn {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -13,6 +13,9 @@ const Menu = () => {
   const GoToshishaMenu = () => {
     navigate("/shishamenu", { replace: true });
   };
+  const GotoWineMenu = () => {
+    navigate("/winemenu", { replace: true });
+  };
 
   return (
     <div className="wrapper">
@@ -34,10 +37,10 @@ const Menu = () => {
           onClick={GotoFoodMenu}
         />
         <MainMenu
-          title="Wine"
+          title="Beverage"
           image="https://shorturl.at/ohozs"
           likes={45}
-          onClick={GotoFoodMenu}
+          onClick={GotoWineMenu}
         />
         <MainMenu
           title="Shisha"
