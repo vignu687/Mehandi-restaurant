@@ -9,41 +9,29 @@ const NavBar = () => {
   };
 
   return (
-    <div>
-      {" "}
-      <header className="hero-container">
-        <div className="hero-top-bar">
-          <span>📍 Restaurant St, Delicious City, London 9578, UK</span>
-          <span>⏰ Daily : 8.00 am to 10.00 pm</span>
-          <span>📞 +1 123 456 7890</span>
-          <span>📧 booking@restaurant.com</span>
+    <header className="hero-container">
+      <nav className="navbar">
+        <div className="logo">
+          <div className="logo-image" onClick={() => navigate("/")}></div>
+          Mehendi<span>INDIAN DANCE CLUB</span>
         </div>
+        {/* <ul className="nav-links">
+          <li>
+            <a onClick={RouteToMenu}>MENU</a>
+          </li>
+        </ul> */}
+        <button className="find-table-btn" onClick={RouteToMenu}>
+          MENU
+        </button>
+      </nav>
 
-        <nav className="navbar">
-          <div className="logo">
-            Mehendi<span>INDIAN DANCE CLUB</span>
-          </div>
-          <ul className="nav-links">
-            <li>
-              <a href="#">HOME</a>
-            </li>
-            <li>
-              <a href="#" onClick={RouteToMenu}>
-                MENU
-              </a>
-            </li>
-            <li>
-              <a href="#">ABOUT US</a>
-            </li>
-          </ul>
-          <button className="find-table-btn">FOOD SUGGESTIONS</button>
-        </nav>
-
-        <div className="hero-content">
-          <h2>AMAZING & DELICIOUS</h2>
-        </div>
-      </header>
-    </div>
+      <div className="hero-content">
+        {/* <h2>AMAZING & DELICIOUS</h2> */}
+        {/* <p className="hero-tagline">
+          Discover the vibrant taste of India in every bite
+        </p> */}
+      </div>
+    </header>
   );
 };
 

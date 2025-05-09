@@ -1,52 +1,53 @@
 .hero-container {
-  background: url("/your-image.jpg") no-repeat center center/cover;
-  color: white;
+  color: rgb(21, 13, 13);
   height: 100vh;
   position: relative;
   font-family: "Poppins", sans-serif;
-}
-
-.hero-top-bar {
   display: flex;
-  justify-content: space-around;
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  font-size: 0.85rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 60px;
   background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #e6c068;
 }
 
 .logo span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: white;
   display: block;
+  margin-top: 4px;
+  letter-spacing: 1px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 40px;
   padding: 0;
   margin: 0;
+  cursor: pointer;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: white;
   font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
   position: relative;
 }
 
@@ -60,26 +61,83 @@
   left: 0;
 }
 
+.find-table-btn {
+  background-color: #e6c068;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 .find-table-btn:hover {
   background-color: #cfaa4c;
 }
 
 .hero-content {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* background: url("./assets/bg.jpg"); */
+  /* position: absolute;
+  /* top: 60%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 1; */
+
+  color: rgb(21, 13, 13);
+  height: 100vh;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hero-content h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   letter-spacing: 4px;
+  margin-bottom: 10px;
   color: #fff;
 }
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  margin-top: 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.logo-image {
+  width: 60px;
+  height: 60px;
+  background-image: url("./assets/bg.jpg"); /* ← Update to your logo image path */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  background-image: url("./assets/logo.jpg"); /* Change to your actual logo */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
 }

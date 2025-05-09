@@ -2,6 +2,7 @@ import React from "react";
 import "./Menu.css"; // Ensure this file has the CSS you shared
 import { MainMenu } from "./MainMenu";
 import { useNavigate } from "react-router-dom";
+import BackButton from "../BackButton";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -9,23 +10,21 @@ const Menu = () => {
   const GotoFoodMenu = () => {
     navigate("/foodmenu", { replace: true });
   };
+  const GoToshishaMenu = () => {
+    navigate("/shishamenu", { replace: true });
+  };
 
   return (
     <div className="wrapper">
       {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        className="background-video"
-      >
+      <video autoPlay muted loop className="background-video">
         <source
           src="https://res.cloudinary.com/drfbntcbh/video/upload/v1746789467/kkfu8egffmfpbop1hg4e.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
       </video>
-
+      <BackButton to="/" />
       {/* Foreground cards */}
       <div className="card-container">
         <MainMenu
@@ -44,7 +43,7 @@ const Menu = () => {
           title="Shisha"
           image="https://shorturl.at/hdSDl"
           likes={29}
-          onClick={GotoFoodMenu}
+          onClick={GoToshishaMenu}
         />
       </div>
     </div>

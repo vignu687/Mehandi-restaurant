@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import BackButton from "../BackButton";
-import shisha1 from "../../assets/food1.jpg";
+import shisha1 from "../../assets/shisha.jpg";
 import shisha2 from "../../assets/shisha1.jpg";
 import shisha3 from "../../assets/shisha4.jpeg";
-export const FoodMenu = () => {
+
+const ShishaMenu = () => {
   const images = [shisha1, shisha2, shisha3];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -29,7 +30,7 @@ export const FoodMenu = () => {
       }}
     >
       <BackButton to="/menu" />
-      <h2>Food Menu</h2>
+      <h2>Shisha Menu</h2>
       <div
         style={{
           position: "relative",
@@ -61,6 +62,7 @@ export const FoodMenu = () => {
     </div>
   );
 };
+
 const arrowButton = {
   position: "absolute",
   top: "50%",
@@ -72,3 +74,5 @@ const arrowButton = {
   cursor: "pointer",
   zIndex: 1,
 };
+
+export default ShishaMenu;
