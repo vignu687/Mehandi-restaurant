@@ -1,33 +1,50 @@
 import React from "react";
-import "./Menu.css";
+import "./Menu.css"; // Ensure this file has the CSS you shared
 import { MainMenu } from "./MainMenu";
 import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const navigate = useNavigate();
+
   const GotoFoodMenu = () => {
     navigate("/foodmenu", { replace: true });
   };
+
   return (
     <div className="wrapper">
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        className="background-video"
+      >
+        <source
+          src="https://res.cloudinary.com/drfbntcbh/video/upload/v1746789467/kkfu8egffmfpbop1hg4e.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Foreground cards */}
       <div className="card-container">
         <MainMenu
           title="Food"
           image="https://shorturl.at/1k8L5"
           likes={34}
-          onClick={() => GotoFoodMenu()}
+          onClick={GotoFoodMenu}
         />
         <MainMenu
           title="Wine"
           image="https://shorturl.at/ohozs"
           likes={45}
-          onClick={() => GotoFoodMenu()}
+          onClick={GotoFoodMenu}
         />
         <MainMenu
           title="Shisha"
           image="https://shorturl.at/hdSDl"
           likes={29}
-          onClick={() => GotoFoodMenu()}
+          onClick={GotoFoodMenu}
         />
       </div>
     </div>
