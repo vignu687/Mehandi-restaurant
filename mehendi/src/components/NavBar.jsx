@@ -25,12 +25,12 @@ const NavBar = () => {
         </button>
       </nav>
 
-      <div className="hero-content">
+      {/* <div className="hero-content"> */}
         {/* <h2>AMAZING & DELICIOUS</h2> */}
         {/* <p className="hero-tagline">
           Discover the vibrant taste of India in every bite
         </p> */}
-      </div>
+      {/* </div> */}
     </header>
   );
 };

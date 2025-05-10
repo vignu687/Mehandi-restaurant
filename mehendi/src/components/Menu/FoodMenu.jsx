@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import BackButton from "../BackButton";
-import shisha1 from "../../assets/food1.jpg";
-import shisha2 from "../../assets/shisha1.jpg";
-import shisha3 from "../../assets/shisha4.jpeg";
+import food1 from "../../assets/food1.jpg";
+import food2 from "../../assets/food2.jpg";
+import food3 from "../../assets/food3.jpg";
+import food4 from "../../assets/food4.jpg";
+import food5 from "../../assets/food5.jpg";
+import food6 from "../../assets/food6.jpg";
+import food7 from "../../assets/food7.jpg";
 
 export const FoodMenu = () => {
-  const images = [shisha1, shisha2, shisha3];
+  const images = [food1, food2, food3,food4,food5,food6,food7];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {

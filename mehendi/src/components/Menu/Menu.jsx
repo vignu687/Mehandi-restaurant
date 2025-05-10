@@ -18,6 +18,7 @@ const Menu = () => {
   };
 
   return (
+   
     <div className="wrapper">
       {/* Video background */}
       <video autoPlay muted loop className="background-video">
