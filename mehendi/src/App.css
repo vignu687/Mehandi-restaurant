@@ -12,6 +12,9 @@
   }
 }
 
+/* =============================
+   HERO CONTAINER (MAIN WRAPPER)
+============================= */
 .hero-container {
   background: linear-gradient(-45deg, #b08968, #7f5539, #000000, #a47148);
   background-size: 300% 300%;
@@ -22,65 +25,181 @@
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
-/* NAVBAR STYLES */
+/* =============================
+   NAVBAR STYLES
+============================= */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px 60px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
-  position: relative;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
   z-index: 2;
+  text-align: center;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e6c068;
+/* CENTER GROUP CONTAINER */
+.navbar-center-group {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.centered-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
 }
 
-.logo span {
-  font-size: 0.75rem;
-  color: white;
-  display: block;
-  margin-top: 4px;
-  letter-spacing: 1px;
-}
-
-.logo-image {
-  width: 50px;
-  height: 50px;
-  background-image: url("./assets/logo.jpg"); /* Update path if needed */
+.logo-image.large {
+  width: 80px;
+  height: 80px;
+  background-image: url("./assets/logo.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 50%;
-  cursor: pointer;
+  margin-bottom: 10px;
 }
 
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e6c068;
+  line-height: 1.2;
+}
+
+.logo-text span {
+  font-size: 1.1rem;
+  color: white;
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 2px;
+}
+
+/* =============================
+   MENU BUTTON (GLOBAL)
+============================= */
 .find-table-btn {
   background-color: #e6c068;
   color: black;
-  padding: 10px 20px;
+  padding: 12px 28px;
   border: none;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 1.1rem;
   transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .find-table-btn:hover {
   background-color: #cfaa4c;
 }
 
-/* Optional Hero Content Styles if needed later */
+/* =============================
+   SPLASH SCREEN
+============================= */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease 2.5s forwards;
+}
+
+.splash-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  animation: pop 0.8s ease;
+}
+
+.splash-menu-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10000;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: #e6c068;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: background-color 0.3s ease;
+}
+
+.splash-menu-btn:hover {
+  background-color: #d4ae51;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* =============================
+   SLIDESHOW STYLES
+============================= */
+.slideshow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.slideshow-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slideshow-image.active {
+  opacity: 1;
+}
+
+/* =============================
+   HERO TEXT (OPTIONAL)
+============================= */
 .hero-content {
   color: white;
   text-align: center;
@@ -101,66 +220,62 @@
   letter-spacing: 1px;
 }
 
-/* RESPONSIVE STYLES */
+/* =============================
+   RESPONSIVE STYLES
+============================= */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
+    padding: 20px;
   }
 
-  .logo {
-    font-size: 1.5rem;
-    flex-direction: row;
-    gap: 10px;
+  .logo-text {
+    font-size: 2rem;
   }
 
-  .logo span {
-    font-size: 0.65rem;
+  .logo-text span {
+    font-size: 0.9rem;
+  }
+
+  .logo-image.large {
+    width: 60px;
+    height: 60px;
   }
 
   .find-table-btn {
-    margin-top: 10px;
-    width: 100%;
-    padding: 12px;
+    width: auto;
+    padding: 10px 20px;
     font-size: 1rem;
   }
 
-  .hero-content h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .hero-tagline {
+  .splash-menu-btn {
+    bottom: 20px;
+    right: 20px;
     font-size: 1rem;
-    text-align: center;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .logo {
-    font-size: 1.2rem;
+  .logo-text {
+    font-size: 1.6rem;
   }
 
-  .logo span {
-    font-size: 0.6rem;
+  .logo-text span {
+    font-size: 0.75rem;
   }
 
-  .logo-image {
-    width: 40px;
-    height: 40px;
+  .logo-image.large {
+    width: 100%;
+    height: 100px;
   }
 
   .find-table-btn {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-
-  .hero-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-tagline {
     font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+
+  .splash-menu-btn {
+    font-size: 0.9rem;
+    padding: 10px 16px;
   }
 }

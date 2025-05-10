@@ -1,36 +1,71 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 
+import splashImage from "../assets/bg2.jpg";
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
+import img4 from "../assets/img4.jpg";
+
+const images = [img1, img2, img3, img4];
+
 const NavBar = () => {
+  const [showSplash, setShowSplash] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const RouteToMenu = () => {
     navigate("/menu", { replace: true });
   };
 
+  if (showSplash) {
+    return (
+      <div className="splash-screen">
+        <img src={splashImage} alt="Splash" className="splash-image" />
+      </div>
+    );
+  }
+
   return (
     <header className="hero-container">
       <nav className="navbar">
-        <div className="logo">
-          <div className="logo-image" onClick={() => navigate("/")}></div>
-          Mehendi<span>INDIAN DANCE CLUB</span>
+        <div className="navbar-center-group">
+          <div className="centered-logo" onClick={() => navigate("/")}>
+            <div className="logo-image large" />
+            <div className="logo-text">
+              Mehendi
+              <span>INDIAN DANCE CLUB</span>
+            </div>
+          </div>
+          <button className="find-table-btn" onClick={RouteToMenu}>
+            MENU
+          </button>
         </div>
-        {/* <ul className="nav-links">
-          <li>
-            <a onClick={RouteToMenu}>MENU</a>
-          </li>
-        </ul> */}
-        <button className="find-table-btn" onClick={RouteToMenu}>
-          MENU
-        </button>
       </nav>
 
-      {/* <div className="hero-content"> */}
-        {/* <h2>AMAZING & DELICIOUS</h2> */}
-        {/* <p className="hero-tagline">
-          Discover the vibrant taste of India in every bite
-        </p> */}
-      {/* </div> */}
+      <div className="slideshow-container">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Slide ${index + 1}`}
+            className={`slideshow-image ${index === currentIndex ? "active" : ""}`}
+          />
+        ))}
+      </div>
     </header>
   );
 };
