@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BackButton from "../BackButton";
-import shisha1 from "../../assets/shisha.jpg";
-import shisha2 from "../../assets/shisha1.jpg";
+import shisha2 from "../../assets/shisha.jpg";
+import shisha1 from "../../assets/shisha1.jpg";
 import shisha3 from "../../assets/shisha4.jpeg";
 
 const ShishaMenu = () => {
@@ -47,7 +47,7 @@ const ShishaMenu = () => {
         }}
       >
         <BackButton to="/menu" />
-        <h2>Shisha Menu</h2>
+        <h2>Shisha</h2>
         <div
           style={{
             position: "relative",
@@ -72,9 +72,17 @@ const ShishaMenu = () => {
           </button>
 
           {/* Right Arrow */}
-          <button onClick={nextImage} style={{ ...arrowButton, right: "-50px" }}>
+          <button
+            onClick={nextImage}
+            style={{ ...arrowButton, right: "-50px" }}
+          >
             ⟩
           </button>
+        </div>
+        <div
+          style={{ marginTop: "10px", fontSize: "1.2rem", fontWeight: "bold" }}
+        >
+          {currentIndex + 1} / {images.length}
         </div>
       </div>
     </div>

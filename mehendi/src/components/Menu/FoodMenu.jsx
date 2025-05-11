@@ -9,7 +9,7 @@ import food6 from "../../assets/food6.jpg";
 import food7 from "../../assets/food7.jpg";
 
 export const FoodMenu = () => {
-  const images = [food1, food2, food3,food4,food5,food6,food7];
+  const images = [food1, food2, food3, food4, food5, food6, food7];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
@@ -51,7 +51,7 @@ export const FoodMenu = () => {
         }}
       >
         <BackButton to="/menu" />
-        <h2>Food Menu</h2>
+        <h2>Food</h2>
         <div
           style={{
             position: "relative",
@@ -76,9 +76,17 @@ export const FoodMenu = () => {
           </button>
 
           {/* Right Arrow */}
-          <button onClick={nextImage} style={{ ...arrowButton, right: "-50px" }}>
+          <button
+            onClick={nextImage}
+            style={{ ...arrowButton, right: "-50px" }}
+          >
             ⟩
           </button>
+        </div>
+        <div
+          style={{ marginTop: "10px", fontSize: "1.2rem", fontWeight: "bold" }}
+        >
+          {currentIndex + 1} / {images.length}
         </div>
       </div>
     </div>

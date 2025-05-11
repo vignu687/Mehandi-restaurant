@@ -18,7 +18,6 @@ const Menu = () => {
   };
 
   return (
-   
     <div className="wrapper">
       {/* Video background */}
       <video autoPlay muted loop className="background-video">
@@ -32,16 +31,16 @@ const Menu = () => {
       {/* Foreground cards */}
       <div className="card-container">
         <MainMenu
-          title="Food"
-          image="https://shorturl.at/1k8L5"
-          likes={34}
-          onClick={GotoFoodMenu}
-        />
-        <MainMenu
           title="Beverage"
           image="https://shorturl.at/ohozs"
           likes={45}
           onClick={GotoWineMenu}
+        />
+        <MainMenu
+          title="Food"
+          image="https://shorturl.at/1k8L5"
+          likes={34}
+          onClick={GotoFoodMenu}
         />
         <MainMenu
           title="Shisha"
