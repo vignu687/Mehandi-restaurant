@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BackButton from "../BackButton";
-import shisha2 from "../../assets/shisha.jpg";
-import shisha1 from "../../assets/shisha1.jpg";
+import shisha1 from "../../assets/shisha.jpg";
+import shisha2 from "../../assets/shisha1.jpg";
 import shisha3 from "../../assets/shisha4.jpeg";
 
 const ShishaMenu = () => {
