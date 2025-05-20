@@ -24,7 +24,6 @@ export const FoodMenu = () => {
 
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
-      {/* Light Brown & Black Animated Gradient */}
       <style>
         {`
           @keyframes lightBrownBlack {
@@ -37,6 +36,62 @@ export const FoodMenu = () => {
             background: linear-gradient(-45deg, #b08968, #7f5539, #000000, #a47148);
             background-size: 300% 300%;
             animation: lightBrownBlack 20s ease infinite;
+          }
+
+          .arrow-btn {
+            background: transparent !important;
+            padding: 10px 14px;
+            border-radius: 0;
+            color: #fff;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: none !important;
+            transition: color 0.3s ease-in-out;
+            outline: none !important;
+            user-select: none;
+          }
+
+          .arrow-btn:hover {
+            color: #bfa84b;
+          }
+
+          .arrow-btn:focus,
+          .arrow-btn:focus-visible,
+          .arrow-btn:active {
+            background: transparent !important;
+            color: #bfa84b !important;
+            outline: none !important;
+            box-shadow: none !important;
+          }
+
+          @media (max-width: 600px) {
+            .arrow-container {
+              flex-direction: row;
+              justify-content: center;
+              gap: 20px;
+              margin-top: 10px;
+              position: static !important;
+              transform: none !important;
+            }
+
+            .arrow-btn {
+              position: static !important;
+              transform: none !important;
+              font-size: 24px !important;
+              padding: 10px 12px !important;
+            }
+          }
+
+          .responsive-image {
+            width: 90vw;
+            max-width: 900px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
           }
         `}
       </style>
@@ -52,55 +107,56 @@ export const FoodMenu = () => {
       >
         <BackButton to="/menu" />
         <h2>Food</h2>
-        <div
-          style={{
-            position: "relative",
-            display: "inline-block",
-            marginTop: "20px",
-          }}
-        >
+
+        <div style={{ marginTop: "20px", position: "relative" }}>
           <img
             src={images[currentIndex]}
             alt={`Dish ${currentIndex + 1}`}
-            style={{
-              width: "80vw",
-              maxWidth: "500px",
-              borderRadius: "12px",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
-            }}
+            className="responsive-image"
           />
 
-          {/* Left Arrow */}
-          <button onClick={prevImage} style={{ ...arrowButton, left: "-50px" }}>
-            ⟨
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            onClick={nextImage}
-            style={{ ...arrowButton, right: "-50px" }}
+          {/* Arrows (Desktop) */}
+          <div
+            className="arrow-container"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: 0,
+              right: 0,
+              display: "flex",
+              justifyContent: "space-between",
+              padding: "0 10px",
+              transform: "translateY(-50%)",
+            }}
           >
-            ⟩
-          </button>
+            <button
+              onClick={prevImage}
+              className="arrow-btn"
+              aria-label="Previous Image"
+            >
+              ⟨
+            </button>
+            <button
+              onClick={nextImage}
+              className="arrow-btn"
+              aria-label="Next Image"
+            >
+              ⟩
+            </button>
+          </div>
         </div>
+
+        {/* Image Counter */}
         <div
-          style={{ marginTop: "10px", fontSize: "1.2rem", fontWeight: "bold" }}
+          style={{
+            marginTop: "20px",
+            fontSize: "1.2rem",
+            fontWeight: "bold",
+          }}
         >
           {currentIndex + 1} / {images.length}
         </div>
       </div>
     </div>
   );
-};
-
-const arrowButton = {
-  position: "absolute",
-  top: "50%",
-  transform: "translateY(-50%)",
-  background: "transparent",
-  color: "white",
-  border: "none",
-  fontSize: "32px",
-  cursor: "pointer",
-  zIndex: 1,
 };

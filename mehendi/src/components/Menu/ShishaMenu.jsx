@@ -19,8 +19,7 @@ const ShishaMenu = () => {
   };
 
   return (
-    <div style={{ position: "relative", overflow: "hidden" }}>
-      {/* Animated Gold & Black Gradient Background */}
+    <div style={{ position: "relative", overflow: "visible" }}>
       <style>
         {`
           @keyframes goldBlackGradient {
@@ -33,6 +32,82 @@ const ShishaMenu = () => {
             background: linear-gradient(-45deg, #000000, #4b3b0a, #bfa84b, #000000);
             background-size: 300% 300%;
             animation: goldBlackGradient 20s ease infinite;
+          }
+
+          /* Desktop arrows overlay without circles */
+          .arrow-desktop {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            color: white;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 4px 8px;
+            z-index: 1;
+            user-select: none;
+            transition: color 0.3s ease;
+          }
+          .arrow-desktop:hover {
+            color: #bfa84b;
+          }
+          .arrow-left {
+            left: 10px;
+          }
+          .arrow-right {
+            right: 10px;
+          }
+
+          /* Mobile arrows below image without circles */
+          .arrow-mobile {
+            display: none;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 16px;
+          }
+          .arrow-mobile button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 4px 8px;
+            user-select: none;
+            transition: color 0.3s ease;
+          }
+          .arrow-mobile button:hover {
+            color: #bfa84b;
+          }
+
+          /* Responsive image */
+          .responsive-image {
+            width: 90vw;
+            max-width: 900px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            z-index: 0;
+          }
+
+          /* Media queries */
+          @media (max-width: 600px) {
+            .arrow-desktop {
+              display: none !important;
+            }
+            .arrow-mobile {
+              display: flex !important;
+            }
+          }
+
+          @media (min-width: 601px) {
+            .arrow-mobile {
+              display: none !important;
+            }
           }
         `}
       </style>
@@ -48,57 +123,45 @@ const ShishaMenu = () => {
       >
         <BackButton to="/menu" />
         <h2>Shisha</h2>
-        <div
-          style={{
-            position: "relative",
-            display: "inline-block",
-            marginTop: "20px",
-          }}
-        >
+
+        <div style={{ position: "relative", display: "inline-block", marginTop: "20px" }}>
           <img
             src={images[currentIndex]}
             alt={`Shisha ${currentIndex + 1}`}
-            style={{
-              width: "80vw",
-              maxWidth: "500px",
-              borderRadius: "12px",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
-            }}
+            className="responsive-image"
           />
 
-          {/* Left Arrow */}
-          <button onClick={prevImage} style={{ ...arrowButton, left: "-50px" }}>
+          <button
+            onClick={prevImage}
+            className="arrow-desktop arrow-left"
+            aria-label="Previous Image"
+          >
             ⟨
           </button>
-
-          {/* Right Arrow */}
           <button
             onClick={nextImage}
-            style={{ ...arrowButton, right: "-50px" }}
+            className="arrow-desktop arrow-right"
+            aria-label="Next Image"
           >
             ⟩
           </button>
         </div>
-        <div
-          style={{ marginTop: "10px", fontSize: "1.2rem", fontWeight: "bold" }}
-        >
+
+        <div className="arrow-mobile">
+          <button onClick={prevImage} aria-label="Previous Image">
+            ⟨
+          </button>
+          <button onClick={nextImage} aria-label="Next Image">
+            ⟩
+          </button>
+        </div>
+
+        <div style={{ marginTop: "10px", fontSize: "1.2rem", fontWeight: "bold" }}>
           {currentIndex + 1} / {images.length}
         </div>
       </div>
     </div>
   );
-};
-
-const arrowButton = {
-  position: "absolute",
-  top: "50%",
-  transform: "translateY(-50%)",
-  background: "transparent",
-  color: "white",
-  border: "none",
-  fontSize: "32px",
-  cursor: "pointer",
-  zIndex: 1,
 };
 
 export default ShishaMenu;
