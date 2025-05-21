@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
+/* =============================
+   ANIMATIONS
+============================= */
 @keyframes brownBlackGradient {
   0% {
     background-position: 0% 50%;
@@ -12,8 +15,37 @@
   }
 }
 
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 /* =============================
-   HERO CONTAINER (MAIN WRAPPER)
+   GLOBALS
+============================= */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* =============================
+   HERO CONTAINER (Main Wrapper)
 ============================= */
 .hero-container {
   background: linear-gradient(-45deg, #b08968, #7f5539, #000000, #a47148);
@@ -22,7 +54,6 @@
   color: rgb(21, 13, 13);
   height: 100vh;
   position: relative;
-  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -30,7 +61,7 @@
 }
 
 /* =============================
-   NAVBAR STYLES
+   NAVBAR
 ============================= */
 .navbar {
   display: flex;
@@ -40,14 +71,16 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   position: absolute;
-  top: 0;
+  top:0;
   width: 100%;
-  height: 100%;
+  height:100%;
   z-index: 2;
   text-align: center;
 }
 
-/* CENTER GROUP CONTAINER */
+/* =============================
+   NAVBAR GROUP
+============================= */
 .navbar-center-group {
   display: flex;
   flex-direction: column;
@@ -66,7 +99,7 @@
 .logo-image.large {
   width: 80px;
   height: 80px;
-  background-image: url("./assets/logo.jpg");
+  background-image: url("./assets/logo.jpg"); /* Replace with actual path if needed */
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -78,6 +111,7 @@
   font-weight: bold;
   color: #e6c068;
   line-height: 1.2;
+  text-align: center;
 }
 
 .logo-text span {
@@ -89,7 +123,7 @@
 }
 
 /* =============================
-   MENU BUTTON (GLOBAL)
+   MENU BUTTON
 ============================= */
 .find-table-btn {
   background-color: #e6c068;
@@ -132,47 +166,8 @@
   animation: pop 0.8s ease;
 }
 
-.splash-menu-btn {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  z-index: 10000;
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  background-color: #e6c068;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s ease;
-}
-
-.splash-menu-btn:hover {
-  background-color: #d4ae51;
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 /* =============================
-   SLIDESHOW STYLES
+   SLIDESHOW
 ============================= */
 .slideshow-container {
   position: absolute;
@@ -198,7 +193,7 @@
 }
 
 /* =============================
-   HERO TEXT (OPTIONAL)
+   OPTIONAL: HERO TEXT
 ============================= */
 .hero-content {
   color: white;
@@ -207,75 +202,5 @@
 }
 
 .hero-content h2 {
-  font-size: 2.5rem;
-  letter-spacing: 4px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.hero-tagline {
-  font-size: 1.1rem;
-  color: #f1f1f1;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-/* =============================
-   RESPONSIVE STYLES
-============================= */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 20px;
-  }
-
-  .logo-text {
-    font-size: 2rem;
-  }
-
-  .logo-text span {
-    font-size: 0.9rem;
-  }
-
-  .logo-image.large {
-    width: 60px;
-    height: 60px;
-  }
-
-  .find-table-btn {
-    width: auto;
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-
-  .splash-menu-btn {
-    bottom: 20px;
-    right: 20px;
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-text {
-    font-size: 1.6rem;
-  }
-
-  .logo-text span {
-    font-size: 0.75rem;
-  }
-
-  .logo-image.large {
-    width: 100%;
-    height: 100px;
-  }
-
-  .find-table-btn {
-    font-size: 0.95rem;
-    padding: 8px 16px;
-  }
-
-  .splash-menu-btn {
-    font-size: 0.9rem;
-    padding: 10px 16px;
-  }
+  font-size: 2.5
 }

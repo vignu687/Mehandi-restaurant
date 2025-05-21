@@ -16,15 +16,15 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 3000);
-    return () => clearTimeout(timer);
+    const splashTimeout = setTimeout(() => setShowSplash(false), 3000);
+    return () => clearTimeout(splashTimeout);
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const slideshowInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
-    return () => clearInterval(interval);
+    return () => clearInterval(slideshowInterval);
   }, []);
 
   const RouteToMenu = () => {
@@ -41,6 +41,17 @@ const NavBar = () => {
 
   return (
     <header className="hero-container">
+      <div className="slideshow-container">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Slide ${index + 1}`}
+            className={`slideshow-image ${index === currentIndex ? "active" : ""}`}
+          />
+        ))}
+      </div>
+
       <nav className="navbar">
         <div className="navbar-center-group">
           <div className="centered-logo" onClick={() => navigate("/")}>
@@ -55,17 +66,6 @@ const NavBar = () => {
           </button>
         </div>
       </nav>
-
-      <div className="slideshow-container">
-        {images.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Slide ${index + 1}`}
-            className={`slideshow-image ${index === currentIndex ? "active" : ""}`}
-          />
-        ))}
-      </div>
     </header>
   );
 };
