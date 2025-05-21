@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import BackButton from "../BackButton";
-import beverage1 from "../../assets/beverage1.jpg";
-import beverage2 from "../../assets/beverage2.jpg";
-import beverage3 from "../../assets/beverage3.jpg";
+import beverage1 from "../../assets/beverage1.jpeg";
+import beverage2 from "../../assets/beverage2.jpeg";
+import beverage3 from "../../assets/beverage3.jpeg";
+import beverage4 from "../../assets/beverage4.jpeg";
+import beverage5 from "../../assets/beverage5.jpeg";
+import beverage6 from "../../assets/beverage6.jpeg";
 
 export const WineMenu = () => {
-  const images = [beverage1, beverage2, beverage3];
+  const images = [beverage1, beverage2, beverage3, beverage4, beverage5, beverage6];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
